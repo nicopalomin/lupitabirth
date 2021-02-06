@@ -10,7 +10,7 @@ trim_blocks=True)
 class Root(object):
     @cherrypy.expose
     def index(self):
-        return "Hello World!"
+        return env.get_template('html/index.html').render()
 
 if __name__ == '__main__':
    cherrypy.quickstart(Root(), '/')
